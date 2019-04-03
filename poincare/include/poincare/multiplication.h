@@ -71,9 +71,9 @@ public:
   Multiplication(const MultiplicationNode * n) : NAryExpression(n) {}
   static Multiplication Builder() { return TreeHandle::NAryBuilder<Multiplication, MultiplicationNode>(); }
   static Multiplication Builder(Expression e1) { return Multiplication::Builder(&e1, 1); }
-  static Multiplication Builder(Expression e1, Expression e2) { return Multiplication::Builder(ArrayBuilder<Expression>(e1, e2).array(), 2); }
-  static Multiplication Builder(Expression e1, Expression e2, Expression e3) { return Multiplication::Builder(ArrayBuilder<Expression>(e1, e2, e3).array(), 3); }
-  static Multiplication Builder(Expression e1, Expression e2, Expression e3, Expression e4) { return Multiplication::Builder(ArrayBuilder<Expression>(e1, e2, e3, e4).array(), 4); }
+  static Multiplication Builder(Expression e1, Expression e2) { return Multiplication::Builder(ArrayBuilder2<Expression>(e1, e2).array(), 2); }
+  static Multiplication Builder(Expression e1, Expression e2, Expression e3) { return Multiplication::Builder(ArrayBuilder3<Expression>(e1, e2, e3).array(), 3); }
+  static Multiplication Builder(Expression e1, Expression e2, Expression e3, Expression e4) { return Multiplication::Builder(ArrayBuilder4<Expression>(e1, e2, e3, e4).array(), 4); }
   static Multiplication Builder(Expression * children, size_t numberOfChildren) { return TreeHandle::NAryBuilder<Multiplication, MultiplicationNode>(children, numberOfChildren); }
 
   // Properties

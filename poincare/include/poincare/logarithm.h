@@ -48,7 +48,7 @@ class Logarithm final : public Expression {
   friend class LogarithmNode<2>;
 public:
   Logarithm(const LogarithmNode<2> * n) : Expression(n) {}
-  static Logarithm Builder(Expression child0, Expression child1) { return TreeHandle::FixedArityBuilder<Logarithm, LogarithmNode<2>>(ArrayBuilder<TreeHandle>(child0, child1).array(), 2); }
+  static Logarithm Builder(Expression child0, Expression child1) { return TreeHandle::FixedArityBuilder<Logarithm, LogarithmNode<2>>(ArrayBuilder2<TreeHandle>(child0, child1).array(), 2); }
   static constexpr Expression::FunctionHelper s_functionHelper = Expression::FunctionHelper("log", 2, &UntypedBuilderTwoChildren<Logarithm>);
 
   Expression shallowReduce(ExpressionNode::ReductionContext reductionContext);
